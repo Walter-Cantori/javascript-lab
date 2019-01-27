@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input1" type="text">
+    <input id="input2" type="text">
+    <textarea id="txt1" cols="30" rows="10"></textarea>
+    <textarea id="txt2" cols="30" rows="10"></textarea>
+    <button id="btn1">BTN1</button>
+    <button id="btn2">BTN2</button>
+    <button id="btn3">Clear</button>
+
+    <script type="text/javascript">
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementById('btn2')
+        let btn3 = document.getElementById('btn3')
+        let input1 = document.getElementById('input1')
+        let input2 = document.getElementById('input2')
+        let txt1 = document.getElementById('txt1')
+        let txt2 = document.getElementById('txt2')
+
+        btn1.addEventListener('click',function(e){ //add Event Listener allow to attach more than one function
+            txt1.innerHTML += "btn1 clicked \n"
+        })
+
+        btn2.onclick = function(){  //only one function can be attached as event listener was not used
+            txt2.innerHTML += "btn2 clicked \n"
+        }
+
+        btn3.addEventListener('click',function(){
+            input1.value = ""
+            txt1.innerHTML = ""
+            input2.value = ""
+            txt2.innerHTML = ""
+        })
+
+        input1.addEventListener('keyup', function(e){
+            //alert(e.target.value == this.value) //this will be element calling the function and also event.target
+            txt1.innerText += this.value
+            e.preventDefault()
+            
+        })
+
+   
+
+    
+    </script>
+</body>
+</html>

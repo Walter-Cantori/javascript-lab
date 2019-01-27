@@ -1,0 +1,53 @@
+<!-- Original code -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Clicker</title>
+    <meta name="description" content="">
+    <style></style>
+</head>
+<body>
+    <button>Click!</button>
+
+<script>
+    const counter = {
+        cnt: 0,
+        inc: function() {
+            cnt++;
+            console.log(cnt);
+        }
+    };
+    const button = document.getElementsByTagName('button')[0];
+    button.addEventListener('click', counter.inc(), false);
+</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Clicker</title>
+    <meta name="description" content="">
+    <style></style>
+</head>
+<body>
+    <button>Click</button>
+
+<script>
+    const counter = {
+        cnt: 0,
+        inc() {
+            this.cnt++;
+            console.log(this.cnt);
+        }
+    };
+    const button = document.getElementsByTagName('button')[0];
+
+    button.addEventListener('click', () => counter.inc(), false);
+</script>
+</body>
+</html>
+
